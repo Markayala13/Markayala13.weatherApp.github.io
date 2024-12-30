@@ -13,7 +13,7 @@ function fetchWeather(url){
     fetch(url)
     .then(response => {
         if (!response.ok) {
-            throw new Error("No se pudo obtener los datos del clima.");
+            throw new Error("No information");
         }
         return response.json(); // Convierte la respuesta en JSON
     })
@@ -46,6 +46,7 @@ document.querySelector('.details').innerHTML =`
 })
     .catch(error => {
         console.error("Error en la solicitud:", error);
+        document.querySelector('.details').innerHTML = `<div style="color:white;">${error.message}</div>`;
     });
     
    
