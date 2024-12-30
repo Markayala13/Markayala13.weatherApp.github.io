@@ -21,7 +21,7 @@ function fetchWeather(url){
        
    
         const iconCode = data.weather[0].icon;
-    const temperature = data.main.temp;
+    const temperature = Math.round(data.main.temp);
     const description = data.weather[0].description;
     
     const feelsLike = data.main.feels_like;
@@ -66,13 +66,3 @@ fetchWeather(url);
 }
 formElement.addEventListener("submit",getWeather);
 
-/*
-
-<div class="temperature">22°C</div>
-<div class="description">Sunny</div>
-<div class="details">
-    <div>Feels like: 23°C</div>
-    <div>Humidity: 40%</div>
-    <div>Wind Speed: 5 m/s</div>
-</div>
-*/
